@@ -9,10 +9,10 @@
 
 #### It is important to mention the instructor here as it's all their hard work. 
 
-### Instructor :
-#### Kirill Eremenko
-#### Hadelin de Ponteves
-#### SuperDataScience Team
-#### SuperDataScience Support
+### InstructorS:
+#### 1.Kirill Eremenko
+#### 2.Hadelin de Ponteves
+#### 3.SuperDataScience Team
+#### 4.SuperDataScience Support
  
   
