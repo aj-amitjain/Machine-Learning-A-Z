@@ -6,6 +6,7 @@ Created on Mon Jan 27 11:51:10 2020
 
 @Description: Classification Complete Code
 """
+
 ## Importing the library 
 import pandas as pd 
 import numpy as np 
@@ -30,7 +31,10 @@ X_test = sc.transform(X_test)
 ## Creating different classifier, 
 ## and finding y_pred & cm for each classifier
 
-## Logistic Regression 
+#-------------------------------------------------------#
+
+## Logistic Regression
+title = 'Logistic Regressor'
 from sklearn.linear_model import LogisticRegression
 classifier = LogisticRegression(random_state=0)
 classifier.fit(X_train, y_train)
@@ -42,7 +46,10 @@ cm = confusion_matrix(y_test, y_pred)
 
 print('Confusion Matrix :\n', cm)
 
-## K-NN 
+#------------------------- OR ----------------------------#
+
+## K-NN
+title = 'KNN'
 from sklearn.neighbors import KNeighborsClassifier
 classifier = KNeighborsClassifier(n_neighbors=5, metric = 'minkowski', p = 2)
 classifier.fit(X_train, y_train)
@@ -54,7 +61,10 @@ cm = confusion_matrix(y_test, y_pred)
 
 print('Confusion Matrix :\n', cm)
 
-##  SVM 
+#------------------------- OR ----------------------------#
+
+##  SVM
+title = 'SVM'
 from sklearn.svm import SVC
 classifier = SVC(kernel='linear', random_state=0)
 classifier.fit(X_train, y_train)
@@ -66,7 +76,10 @@ cm = confusion_matrix(y_test, y_pred)
 
 print('Confusion Matrix :\n', cm)
 
+#------------------------- OR ----------------------------#
+
 ## Kernel SVM
+title = 'Kernel SVM'
 from sklearn.svm import SVC
 classifier = SVC(kernel='rbf', random_state=0)
 classifier.fit(X_train, y_train)
@@ -78,7 +91,10 @@ cm = confusion_matrix(y_test, y_pred)
 
 print('Confusion Matrix :\n', cm)
 
-## Naive bayes 
+#------------------------- OR ----------------------------#
+
+## Naive bayes
+title = 'Navie Bayes'
 from sklearn.naive_bayes import GaussianNB
 classifier = GaussianNB()
 classifier.fit(X_train, y_train)
@@ -90,7 +106,10 @@ cm = confusion_matrix(y_test, y_pred)
 
 print('Confusion Matrix :\n', cm)
 
+#------------------------- OR ----------------------------#
+
 ## Decision Tree
+title = 'Decision Tree'
 from sklearn.tree import DecisionTreeClassifier
 classifier = DecisionTreeClassifier(criterion='entropy', random_state=0)
 classifier.fit(X_train, y_train)
@@ -102,7 +121,10 @@ cm = confusion_matrix(y_test, y_pred)
 
 print('Confusion Matrix :\n', cm)
 
+#------------------------- OR ----------------------------#
+
 ## Random Forest
+title = 'Random Forest'
 from sklearn.ensemble import RandomForestClassifier
 classifier = RandomForestClassifier(n_estimators = 10, criterion = 'entropy', random_state=0)
 classifier.fit(X_train, y_train)
@@ -114,6 +136,7 @@ cm = confusion_matrix(y_test, y_pred)
 
 print('Confusion Matrix :\n', cm)
 
+#-------------------------------------------------------#
 
 ## Visualising the results for classifers,
 ## Just run the section of any classifier and 
@@ -133,7 +156,8 @@ for i, j in enumerate(np.unique(y_set)):
     plt.scatter(X_set[y_set.iloc[:,0].values == j , 0], X_set[y_set.iloc[:,0].values == j , 1], 
                 c = ListedColormap(('red', 'green'))(i), label=j)
 
-plt.title('Classifier (Train set)')
+title_ = title + ' (Train set)' 
+plt.title(title_)
 plt.xlabel('Age')
 plt.ylabel('Estimated Salary')
 plt.legend()
@@ -153,7 +177,8 @@ for i, j in enumerate(np.unique(y_set)):
     plt.scatter(X_set[y_set.iloc[:,0].values == j , 0], X_set[y_set.iloc[:,0].values == j , 1], 
                 c = ListedColormap(('red', 'green'))(i), label=j)
 
-plt.title('Classifier (Test set)')
+title_ = title + ' (Test set)' 
+plt.title(title_)
 plt.xlabel('Age')
 plt.ylabel('Estimated Salary')
 plt.legend()
